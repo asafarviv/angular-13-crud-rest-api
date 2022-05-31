@@ -1,0 +1,33 @@
+<div >
+    <h1>Users1</h1>
+  
+    <a href="#" routerLink="/post/create/" class="btn btn-success">Create New User</a>
+   
+   <table>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Body</th>
+        <th>BirthDate</th>
+        <th>PhoneNumber</th>
+        <th>CreatedAt</th>
+        <th>UpdatedAt</th>
+        <th>CreatedBy</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.birthDate }}</td>
+        <td>{{ user.phoneNumber }}</td>
+        <td>{{ user.createdAt }}</td>
+        <td>{{ user.updatedAt }}</td>
+        <td>{{ user.createdBy }}</td>
+        <td>
+          <a href="#" [routerLink]="['/user/', user.id, 'view']" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/user/', user.id, 'edit']" class="btn btn-primary">Edit</a>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+ </div> 
